@@ -5,6 +5,7 @@ React 初始化项目，配置简易 Webpack，支持热更新，支持 TypeScri
 ## 前言
 > 如果不想用 TypeScript 可以删除相关文件再 Install
 * tsconfig.json 文件
+* 将 Src 目录中 tsx 文件该问 jsx 文件
 * webpack.config.js 中的 TSX loader 部分
 * package.json 中如下代码
 ```json
