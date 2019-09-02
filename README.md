@@ -1,6 +1,6 @@
 # react-app
 
-React 初始化项目，配置简易 Webpack，支持热更新，支持 TypeScript、Less、Sass 等.
+React 初始化项目，配置简易 Webpack，支持热更新，支持 TypeScript、Less、Sass 等。
 
 ## Installing
 ```
@@ -21,4 +21,4 @@ yarn build
 
 > 遇到热更新失败警告，尝试手动刷新页面。
 
-有问题提 Issue
+有问题提 Issue。
