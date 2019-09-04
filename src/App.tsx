@@ -19,7 +19,7 @@ function App() {
     <div>
       <h1 className="title">Hello React App {time}s</h1>
     </div>
-  )
+  );
 }
 
 export default hot(App);

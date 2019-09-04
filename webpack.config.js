@@ -108,7 +108,7 @@ module.exports = (env, argv) => {
       inline: true,
       historyApiFallback: true,
       contentBase: './static',
-      hotOnly: true,
+      hot: true,
       overlay: {
         warnings: true,
         errors: true

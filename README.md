@@ -36,6 +36,13 @@ yarn start
 ```shell script
 yarn build
 ```
+
+## 格式化代码
+配置文件 `.perttierrc` 参考官网 https://prettier.io/
+```shell script
+yarn prettier
+```
+
 ## 备注
 > Static 为静态资源目录，目录内的资源都会按照原路径 Copy 至 Dist 目录。
 
