@@ -1,15 +1,14 @@
 {
-  "name": "react-init",
+  "name": "react-app",
   "version": "1.0.0",
   "private": true,
   "license": "MIT",
   "scripts": {
-    "start": "webpack-dev-server --open --mode=development",
-    "build": "webpack --mode=production --progress",
+    "start": "webpack-dev-server --open --progress --config ./webpack/webpack.dev.js",
+    "build": "webpack --progress --config ./webpack/webpack.prod.js",
     "prettier": "prettier --write 'src/**/*.{js,jsx,ts,tsx,scss,less,css}'"
   },
   "dependencies": {
-    "@hot-loader/react-dom": "^16.9.0",
     "@types/react": "^16.9.2",
     "@types/react-dom": "^16.9.0",
     "babel-polyfill": "^6.26.0",
@@ -45,6 +44,7 @@
     "cssnano": "~4.1.10",
     "file-loader": "~4.2.0",
     "html-webpack-plugin": "~3.2.0",
+    "json-loader": "^0.5.7",
     "less": "~3.10.3",
     "less-loader": "~5.0.0",
     "mini-css-extract-plugin": "~0.8.0",
@@ -52,7 +52,6 @@
     "optimize-css-assets-webpack-plugin": "~5.0.3",
     "postcss-loader": "~3.0.0",
     "prettier": "^1.18.2",
-    "react-hot-loader": "~4.12.12",
     "sass-loader": "~8.0.0",
     "style-loader": "~1.0.0",
     "terser-webpack-plugin": "~1.4.1",
@@ -61,6 +60,7 @@
     "url-loader": "~2.1.0",
     "webpack": "~4.39.3",
     "webpack-cli": "~3.3.7",
-    "webpack-dev-server": "~3.8.0"
+    "webpack-dev-server": "~3.8.0",
+    "webpack-merge": "^4.2.2"
   }
 }

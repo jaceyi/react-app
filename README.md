@@ -1,6 +1,6 @@
 # react-app
 
-React 初始化项目，配置简易 Webpack，支持热更新，支持 TypeScript、Less、Sass 等。
+React 初始化项目，配置简易 Webpack，支持 TypeScript、Less、Sass 等。
 
 ## 前言
 > 如果不想用 TypeScript 可以将 Src 目录中 tsx 文件改为 jsx 文件，并且再删除 TypeScript 相关依赖（删除信息如下）
