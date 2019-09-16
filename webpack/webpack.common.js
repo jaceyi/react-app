@@ -23,10 +23,7 @@ module.exports = {
       }
     ]),
     new HtmlWebpackPlugin({
-      template: './static/index.html',
-      meta: {
-        viewport: 'width=device-width, initial-scale=1, shrink-to-fit=no'
-      }
+      template: './static/index.html'
     }),
     new MiniCssExtractPlugin({
       filename: '[name].[hash:8].css',
@@ -65,7 +62,6 @@ module.exports = {
       },
       {
         test: /\.(svg|eot|ttf|woff)$/,
-        include: /src/,
         loader: 'file-loader',
         options: {
           name: 'static/fonts/[name].[hash:8].[ext]'
@@ -94,7 +90,11 @@ module.exports = {
       {
         test: /\.(css)$/,
         include: /node_modules/,
-        use: [MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader']
+        use: [
+          MiniCssExtractPlugin.loader,
+          'css-loader',
+          'postcss-loader'
+        ]
       }
     ]
   }
