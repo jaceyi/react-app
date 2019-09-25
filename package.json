@@ -1,12 +1,11 @@
 {
-  "name": "react-app",
-  "version": "1.0.0",
   "private": true,
   "license": "MIT",
   "scripts": {
     "start": "webpack-dev-server --open --progress --config ./webpack/webpack.dev.js",
     "build": "webpack --progress --config ./webpack/webpack.prod.js",
-    "prettier": "prettier --write 'src/**/*.{js,jsx,ts,tsx,scss,less,css}'"
+    "prettier": "prettier --write 'src/**/*.{js,jsx,ts,tsx,scss,less,css}'",
+    "lint": "eslint --ext .js --ext .vue src/"
   },
   "dependencies": {
     "@types/react": "^16.9.2",
@@ -35,13 +34,19 @@
     "@babel/plugin-syntax-import-meta": "^7.0.0",
     "@babel/preset-env": "^7.0.0",
     "@babel/preset-react": "^7.0.0",
+    "@typescript-eslint/eslint-plugin": "^2.3.1",
+    "@typescript-eslint/parser": "^2.3.1",
     "autoprefixer": "^9.6.1",
+    "babel-eslint": "^10.0.3",
     "babel-loader": "^8.0.0",
     "babel-plugin-import": "^1.9.1",
     "clean-webpack-plugin": "^3.0.0",
     "copy-webpack-plugin": "^5.0.4",
     "css-loader": "^3.2.0",
     "cssnano": "^4.1.10",
+    "eslint": "^6.4.0",
+    "eslint-loader": "^3.0.0",
+    "eslint-plugin-react": "^7.14.3",
     "file-loader": "^4.2.0",
     "html-webpack-plugin": "^3.2.0",
     "json-loader": "^0.5.7",

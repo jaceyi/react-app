@@ -14,8 +14,8 @@ React 初始化项目，配置简易 Webpack，支持 TypeScript、Less、Sass �
     "@types/react-dom": "^16.9.0"
   },
   "devDependencies": {
-    "ts-loader": "~6.0.4",
-    "typescript": "~3.6.2"
+    "ts-loader": "^6.0.4",
+    "typescript": "^3.6.2"
   }
 }
 ```

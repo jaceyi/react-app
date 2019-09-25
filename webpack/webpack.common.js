@@ -45,9 +45,15 @@ module.exports = {
         loader: 'ts-loader'
       },
       {
+        test: /\.tsx?$/,
+        include: /src/,
+        enforce: 'pre',
+        loader: 'eslint-loader'
+      },
+      {
         test: /\.jsx?/,
         exclude: /node_modules/,
-        use: 'babel-loader'
+        loader: 'babel-loader'
       },
       {
         type: 'javascript/auto',
