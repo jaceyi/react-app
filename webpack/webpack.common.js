@@ -26,15 +26,16 @@ module.exports = {
       template: './static/index.html'
     }),
     new MiniCssExtractPlugin({
-      filename: '[name].[hash:8].css',
-      chunkFilename: '[id].[hash:8].css',
+      filename: 'static/css/[name].[hash:8].css',
+      chunkFilename: 'static/css/[id].[hash:8].css',
       ignoreOrder: false
     })
   ],
 
   output: {
-    filename: '[name].[hash:8].bundle.js',
-    path: path.resolve(__dirname, '../dist')
+    filename: 'static/js/[name].[hash:8].bundle.js',
+    path: path.resolve(__dirname, '../dist'),
+    publicPath: '/'
   },
 
   module: {
@@ -56,18 +57,28 @@ module.exports = {
         loader: 'babel-loader'
       },
       {
+        test: /\.jsx?$/,
+        include: /src/,
+        enforce: 'pre',
+        loader: 'eslint-loader'
+      },
+      {
         type: 'javascript/auto',
         test: /\.json$/,
         include: /src/,
         loader: 'json-loader'
       },
       {
-        test: /\.(png|jpg|gif)$/,
+        test: /\.(png|svg|jpg|jpeg|gif)$/,
         include: /src/,
-        loader: 'url-loader'
+        loader: 'url-loader',
+        options: {
+          limit: 1000,
+          name: 'static/images/[name].[hash:8].[ext]'
+        }
       },
       {
-        test: /\.(svg|eot|ttf|woff)$/,
+        test: /\.(eot|ttf|woff)$/,
         loader: 'file-loader',
         options: {
           name: 'static/fonts/[name].[hash:8].[ext]'
