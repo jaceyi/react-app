@@ -83,35 +83,6 @@ module.exports = {
         options: {
           name: 'static/fonts/[name].[hash:8].[ext]'
         }
-      },
-      {
-        test: /\.scss$/,
-        include: /src/,
-        use: [
-          MiniCssExtractPlugin.loader,
-          'css-loader',
-          'postcss-loader',
-          'sass-loader'
-        ]
-      },
-      {
-        test: /\.less$/,
-        include: /src/,
-        use: [
-          MiniCssExtractPlugin.loader,
-          'css-loader',
-          'postcss-loader',
-          'less-loader'
-        ]
-      },
-      {
-        test: /\.(css)$/,
-        include: /node_modules/,
-        use: [
-          MiniCssExtractPlugin.loader,
-          'css-loader',
-          'postcss-loader'
-        ]
       }
     ]
   }

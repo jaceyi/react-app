@@ -2,11 +2,20 @@ const merge = require('webpack-merge');
 const TerserJSPlugin = require('terser-webpack-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const common = require('./webpack.common.js');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = merge(common, {
   mode: 'production',
 
   devtool: 'source-map',
+
+  plugins: [
+    new MiniCssExtractPlugin({
+      filename: 'static/css/[name].[hash:8].css',
+      chunkFilename: 'static/css/[id].[hash:8].css',
+      ignoreOrder: false
+    })
+  ],
 
   optimization: {
     minimizer: [
@@ -56,5 +65,44 @@ module.exports = merge(common, {
         }
       }
     }
+  },
+
+  module: {
+    rules: [
+      {
+        test: /\.scss$/,
+        include: /src/,
+        use: [
+          MiniCssExtractPlugin.loader,
+          'css-loader',
+          'postcss-loader',
+          'sass-loader'
+        ]
+      },
+      {
+        test: /\.less$/,
+        include: /src/,
+        use: [
+          MiniCssExtractPlugin.loader,
+          'css-loader',
+          'postcss-loader',
+          {
+            loader: "less-loader",
+            options: {
+                javascriptEnabled: true
+            }
+          }
+        ]
+      },
+      {
+        test: /\.(css)$/,
+        include: /node_modules/,
+        use: [
+          MiniCssExtractPlugin.loader,
+          'css-loader',
+          'postcss-loader'
+        ]
+      }
+    ]
   }
 });
