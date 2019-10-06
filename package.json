@@ -10,10 +10,13 @@
   "dependencies": {
     "@types/react": "^16.9.2",
     "@types/react-dom": "^16.9.0",
+    "@types/react-router": "^5.1.1",
+    "@types/react-router-dom": "^5.1.0",
     "babel-polyfill": "^6.26.0",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
-    "yarn": "^1.19.0"
+    "react-router": "^5.1.2",
+    "react-router-dom": "^5.1.2"
   },
   "devDependencies": {
     "@babel/core": "^7.0.0",

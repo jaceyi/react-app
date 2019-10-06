@@ -1,25 +1,30 @@
-body {
-  background: url("./assets/images/bg-banner.jpg") no-repeat center;
-  background-size: cover;
-  min-height: 100vh;
-  overflow: hidden;
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
-.title {
-  font-size: 38px;
-  font-weight: 300;
+.image-box {
+  width: 200px;
   text-align: center;
-  margin-top: 32vh;
-  color: #555;
+  margin: 15vh auto 0;
+}
+
+.react-image {
+  width: 100%;
+  animation: rotate 5s linear infinite;
 }
 
 .input {
   display: block;
-  margin: 50px auto 0;
+  margin: 10vh auto 0;
   width: 200px;
   height: 30px;
   padding: 2px 14px;
-  background-color: rgba($color: #000000, $alpha: 0.1);
+  background-color: rgba($color: #000, $alpha: 0.05);
   border-radius: 9em;
   transition: all 0.3s;
   border: 1px solid transparent;
@@ -27,9 +32,16 @@ body {
   &:focus {
     border: 1px solid #fff;
     box-shadow: 0 0 4px rgba($color: #000000, $alpha: 0.2);
+    background-color: rgba($color: #000, $alpha: 0.1);
   }
 
   &.error {
-    border: 1px solid red;
+    border: 1px solid rgba(255, 45, 45, 0.6);
   }
 }
+
+.footer {
+  text-align: center;
+  margin-top: 30px;
+}
+
