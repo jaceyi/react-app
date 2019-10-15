@@ -1,0 +1,47 @@
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.image-box {
+  width: 200px;
+  text-align: center;
+  margin: 15vh auto 0;
+}
+
+.react-image {
+  width: 100%;
+  animation: rotate 10s linear infinite;
+}
+
+.input {
+  display: block;
+  margin: 12vh auto 0;
+  width: 200px;
+  height: 30px;
+  padding: 2px 14px;
+  background-color: rgba($color: #000, $alpha: 0.05);
+  border-radius: 9em;
+  transition: all 0.3s;
+  border: 1px solid transparent;
+  box-shadow: 0 0 4px rgba(#000, 0.2);
+  background-color: #fff;
+
+  &:focus {
+    border: 1px solid rgba(#999, 0.3);
+    box-shadow: 0 0 4px rgba($color: #000000, $alpha: 0.2);
+  }
+
+  &.error {
+    border: 1px solid rgba(255, 45, 45, 0.6);
+  }
+}
+
+.footer {
+  text-align: center;
+  margin-top: 30px;
+}

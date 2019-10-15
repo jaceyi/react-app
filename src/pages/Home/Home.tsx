@@ -3,6 +3,7 @@ import { REG_EXP_EMAIL } from '@/utils/consts';
 import * as reactImage from '@/assets/images/react.png';
 import Button from '@/components/Button/Button';
 import { Link } from 'react-router-dom';
+import  './Home.scss';
 
 const { useState } = React;
 
