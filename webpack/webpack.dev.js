@@ -22,12 +22,7 @@ module.exports = merge(common, {
       {
         test: /\.scss$/,
         include: /src/,
-        use: [
-          'style-loader',
-          'css-loader',
-          'postcss-loader',
-          'sass-loader'
-        ]
+        use: ['style-loader', 'css-loader', 'postcss-loader', 'sass-loader']
       },
       {
         test: /\.less$/,
@@ -37,9 +32,9 @@ module.exports = merge(common, {
           'css-loader',
           'postcss-loader',
           {
-            loader: "less-loader",
+            loader: 'less-loader',
             options: {
-                javascriptEnabled: true
+              javascriptEnabled: true
             }
           }
         ]
@@ -47,11 +42,7 @@ module.exports = merge(common, {
       {
         test: /\.(css)$/,
         include: /node_modules/,
-        use: [
-          'style-loader',
-          'css-loader',
-          'postcss-loader'
-        ]
+        use: ['style-loader', 'css-loader', 'postcss-loader']
       }
     ]
   }

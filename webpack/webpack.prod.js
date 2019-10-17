@@ -87,9 +87,9 @@ module.exports = merge(common, {
           'css-loader',
           'postcss-loader',
           {
-            loader: "less-loader",
+            loader: 'less-loader',
             options: {
-                javascriptEnabled: true
+              javascriptEnabled: true
             }
           }
         ]
@@ -97,11 +97,7 @@ module.exports = merge(common, {
       {
         test: /\.(css)$/,
         include: /node_modules/,
-        use: [
-          MiniCssExtractPlugin.loader,
-          'css-loader',
-          'postcss-loader'
-        ]
+        use: [MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader']
       }
     ]
   }

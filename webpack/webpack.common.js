@@ -65,12 +65,10 @@ module.exports = {
       {
         type: 'javascript/auto',
         test: /\.json$/,
-        include: /src/,
         loader: 'json-loader'
       },
       {
         test: /\.(png|svg|jpg|jpeg|gif)$/,
-        include: /src/,
         loader: 'url-loader',
         options: {
           limit: 1000,
