@@ -3,47 +3,36 @@
 React 初始化项目，配置简易 Webpack，支持 TypeScript、Less、Sass 等。
 
 ## 前言
-> 如果不想用 TypeScript 可以将 src 目录中 tsx 文件改为 jsx 文件，并且再删除 TypeScript 相关依赖（删除信息如下）
-* tsconfig.json 文件
-* webpack.common.js 中的 tsx loader 部分
-* package.json 中如下代码
-```json
-{
-  "dependencies": {
-    "@types/react": "^16.9.2",
-    "@types/react-dom": "^16.9.0"
-  },
-  "devDependencies": {
-    "ts-loader": "^6.0.4",
-    "typescript": "^3.6.2"
-  }
-}
-```
+> 项目默认配置有 eslint 如果不需要自行移除，src 目录中有 demo 可供初学，有问题欢迎探讨。
 
 ## 安装依赖
-```shell script
+```bash
 yarn install
 ```
 
 ## 启动本地开发服务
 默认端口 8080
-```shell script
+```bash
 yarn start
 ```
 
 ## 打包编译
 默认输出 dist 文件夹
-```shell script
+```bash
 yarn build
+```
+
+## 检查代码格式
+配置文件 `.eslintrc` 参考官网 https://eslint.bootcss.com/
+```bash
+yarn lint
 ```
 
 ## 格式化代码
 配置文件 `.perttierrc` 参考官网 https://prettier.io/
-```shell script
+```bash
 yarn prettier
 ```
 
 ## 备注
-> Static 为静态资源目录，目录内的资源都会按照原路径 Copy 至 Dist 目录。
-
-有问题提 Issue。
+> static 为静态资源目录，目录内的资源都会按照原路径 Copy 至 dist 目录。

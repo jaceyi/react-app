@@ -6,17 +6,22 @@ interface Props {
   className?: string;
   style?: React.StyleHTMLAttributes<HTMLButtonElement>;
   disabled?: boolean;
-  type?: 'default' | 'primary'
+  type?: 'default' | 'primary';
+  onClick?: React.EventHandler<any>;
 }
 
 const Button: React.FC<Props> = (props: Props) => {
-  const { children, disabled, style, className, type } = props;
+  const { children, disabled, style, className, type, onClick } = props;
 
   return (
     <button
       className={`rc-button rc-button-${type || 'default'} ${className || ''}`}
       style={style}
-      disabled={disabled}>{children}</button>
+      disabled={disabled}
+      onClick={onClick}
+    >
+      {children}
+    </button>
   );
 };
 

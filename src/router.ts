@@ -1,5 +1,5 @@
 import Home from '@/pages/Home/Home';
-import HelloReact from '@/pages/HelloReact/HelloReact';
+import Hello from '@/pages/Hello/Hello';
 
 export default [
   {
@@ -7,7 +7,7 @@ export default [
     component: Home
   },
   {
-    path: '/HelloReact',
-    component: HelloReact
+    path: '/Hello',
+    component: Hello
   }
 ];

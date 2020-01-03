@@ -4,9 +4,10 @@
     "es6": true
   },
   "extends": [
-    "eslint:recommended",
+    "plugin:react/recommended",
     "plugin:@typescript-eslint/eslint-recommended",
-    "plugin:react/recommended"
+    "prettier/@typescript-eslint",
+    "plugin:prettier/recommended"
   ],
   "globals": {
     "Atomics": "readonly",
@@ -25,6 +26,11 @@
     "react",
     "@typescript-eslint"
   ],
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  },
   "rules": {
     "indent": [
       "error", 2,
@@ -52,6 +58,11 @@
     "quotes": ["error", "single"],
     "semi": ["error", "always"],
     "arrow-parens": 0,
-    "jsx-quotes": ["error", "prefer-double"]
+    "jsx-quotes": ["error", "prefer-double"],
+    "no-var": "error",
+    "@typescript-eslint/consistent-type-definitions": [
+      "error",
+      "interface"
+    ]
   }
 }
