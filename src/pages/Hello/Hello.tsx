@@ -4,14 +4,20 @@ import Button from '@/components/Button/Button';
 import store from '@/store';
 import { History } from 'history';
 
-const { useContext } = React;
+const { useContext, useEffect } = React;
 
-interface HomeProps {
+interface HelloProps {
   history: History;
 }
 
-function Hello({ history }: HomeProps) {
+function Hello({ history }: HelloProps) {
   const [state] = useContext(store);
+
+  useEffect(() => {
+    if (!state.userInfo?.name) {
+      history.replace('/');
+    }
+  }, []);
 
   function handleClickBack() {
     history.goBack();

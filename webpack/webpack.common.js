@@ -1,8 +1,5 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const CopyPlugin = require('copy-webpack-plugin');
 
 module.exports = {
   entry: ['babel-polyfill', path.resolve(__dirname, '../src/')],
@@ -15,28 +12,10 @@ module.exports = {
   },
 
   plugins: [
-    new CleanWebpackPlugin(),
-    new CopyPlugin([
-      {
-        from: 'static',
-        to: ''
-      }
-    ]),
     new HtmlWebpackPlugin({
       template: './static/index.html'
-    }),
-    new MiniCssExtractPlugin({
-      filename: 'static/css/[name].[hash:8].css',
-      chunkFilename: 'static/css/[id].[hash:8].css',
-      ignoreOrder: false
     })
   ],
-
-  output: {
-    filename: 'static/js/[name].[hash:8].bundle.js',
-    path: path.resolve(__dirname, '../dist'),
-    publicPath: '/'
-  },
 
   module: {
     rules: [

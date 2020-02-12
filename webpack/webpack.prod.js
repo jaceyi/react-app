@@ -1,15 +1,30 @@
 const merge = require('webpack-merge');
 const TerserJSPlugin = require('terser-webpack-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
-const common = require('./webpack.common.js');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const CopyPlugin = require('copy-webpack-plugin');
+const common = require('./webpack.common.js');
 
 module.exports = merge(common, {
   mode: 'production',
 
   devtool: 'source-map',
 
+  output: {
+    filename: 'static/js/[name].[hash:8].bundle.js',
+    path: path.resolve(__dirname, '../dist'),
+    publicPath: '/'
+  },
+
   plugins: [
+    new CleanWebpackPlugin(),
+    new CopyPlugin([
+      {
+        from: 'static',
+        to: ''
+      }
+    ]),
     new MiniCssExtractPlugin({
       filename: 'static/css/[name].[hash:8].css',
       chunkFilename: 'static/css/[id].[hash:8].css',
