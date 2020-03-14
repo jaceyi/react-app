@@ -2,8 +2,6 @@
 
 React 初始化项目，配置简易 Webpack，支持 TypeScript、Less、Sass 等。
 
-> 项目运行&安装必须要在 Node 版本 11+ 的环境下才可以。
-
 ## 前言
 > 项目默认配置有 eslint 如果不需要自行移除，src 目录中有 demo 可供初学，有问题欢迎探讨。
 

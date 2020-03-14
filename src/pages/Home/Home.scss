@@ -7,13 +7,13 @@
   }
 }
 
-.image-box {
+.image_box {
   width: 200px;
   text-align: center;
   margin: 15vh auto 0;
 }
 
-.react-image {
+.react_image {
   width: 100%;
   animation: rotate 10s linear infinite;
 }
@@ -47,11 +47,6 @@
     border-right-width: 1px !important;
     outline: 0;
     box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.2);
-  }
-
-  &.error {
-    border: 1px solid rgba(255, 45, 45, 0.6);
-    box-shadow: 0 0 0 2px rgba(255, 39, 44, 0.2);
   }
 }
 

@@ -1,4 +1,4 @@
-.rc-button {
+.rc_button {
   border: 0;
   padding: 0 16px;
   line-height: 32px;
@@ -8,8 +8,10 @@
   outline: none;
   background-color: #fff;
   transition: box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1), color 0.3s;
+}
 
-  &.rc-button-default {
+:global {
+  .rc-button-default {
     &:hover {
       box-shadow: 0 -2px 5px 0 rgba(223, 200, 241, 0.3), 0 1px 0 0 rgba(223, 224, 241, 0.3),
         0 1px 1px 0 rgba(162, 166, 191, 0.5), 0 2px 4px 0 rgba(228, 229, 242, 0.2);
@@ -17,7 +19,7 @@
     }
   }
 
-  &.rc-button-primary {
+  .rc-button-primary {
     color: #fff;
     background: linear-gradient(135deg, #00adff, #0167ff);
 

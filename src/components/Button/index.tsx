@@ -1,5 +1,5 @@
 import * as React from 'react';
-import './Button.scss';
+import * as styles from './Button.scss';
 
 interface Props {
   children?: React.ReactNode;
@@ -15,7 +15,7 @@ const Button: React.FC<Props> = (props: Props) => {
 
   return (
     <button
-      className={`rc-button rc-button-${type || 'default'} ${className || ''}`}
+      className={`${styles.rc_button} rc-button-${type || 'default'} ${className || ''}`}
       style={style}
       disabled={disabled}
       onClick={onClick}

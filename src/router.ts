@@ -1,5 +1,5 @@
-import Home from '@/pages/Home/Home';
-import Hello from '@/pages/Hello/Hello';
+import Home from '@/pages';
+import GlobalSearch from '@/pages/global-search';
 
 export default [
   {
@@ -8,6 +8,6 @@ export default [
   },
   {
     path: '/Hello',
-    component: Hello
+    component: GlobalSearch
   }
 ];
