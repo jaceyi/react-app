@@ -7,7 +7,7 @@ export default [
     component: Home
   },
   {
-    path: '/Hello',
+    path: '/global-search',
     component: GlobalSearch
   }
 ];

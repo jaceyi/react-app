@@ -13,8 +13,9 @@
 :global {
   .rc-button-default {
     &:hover {
-      box-shadow: 0 -2px 5px 0 rgba(223, 200, 241, 0.3), 0 1px 0 0 rgba(223, 224, 241, 0.3),
-        0 1px 1px 0 rgba(162, 166, 191, 0.5), 0 2px 4px 0 rgba(228, 229, 242, 0.2);
+      box-shadow: 0 -2px 5px 0 rgba(223, 200, 241, 0.3),
+        0 1px 0 0 rgba(223, 224, 241, 0.3), 0 1px 1px 0 rgba(162, 166, 191, 0.5),
+        0 2px 4px 0 rgba(228, 229, 242, 0.2);
       color: #3ba4f9;
     }
   }
@@ -24,8 +25,8 @@
     background: linear-gradient(135deg, #00adff, #0167ff);
 
     &:hover {
-      box-shadow: 0 1px 10px 0 rgba(139, 162, 236, 0.2), 0 2px 4px 0 rgba(86, 112, 216, 0.2),
-        0 4px 5px 0 rgba(71, 96, 196, 0.3);
+      box-shadow: 0 1px 10px 0 rgba(139, 162, 236, 0.2),
+        0 2px 4px 0 rgba(86, 112, 216, 0.2), 0 4px 5px 0 rgba(71, 96, 196, 0.3);
     }
   }
 }

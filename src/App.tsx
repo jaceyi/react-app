@@ -5,7 +5,12 @@ import routers from '@/router';
 const App = () => (
   <Switch>
     {routers.map(page => (
-      <Route exact key={page.path} path={page.path} component={page.component} />
+      <Route
+        exact
+        key={page.path}
+        path={page.path}
+        component={page.component}
+      />
     ))}
   </Switch>
 );

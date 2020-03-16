@@ -15,7 +15,8 @@ const Button: React.FC<Props> = (props: Props) => {
 
   return (
     <button
-      className={`${styles.rc_button} rc-button-${type || 'default'} ${className || ''}`}
+      className={`${styles.rc_button} rc-button-${type ||
+        'default'} ${className || ''}`}
       style={style}
       disabled={disabled}
       onClick={onClick}

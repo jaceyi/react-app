@@ -13,7 +13,7 @@ const Home = () => {
   const [value, setValue] = useState('');
   const status = REG_EXP_EMAIL.test(value);
 
-  const getUrl = () => `/Hello?email=${encodeURIComponent(value)}`;
+  const getUrl = () => `/global-search?email=${encodeURIComponent(value)}`;
 
   return (
     <div>
