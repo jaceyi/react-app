@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { useHistory } from 'react-router';
 import Button from '@/components/Button';
-import * as styles from './GlobalSearch.scss';
+import * as styles from './styles/index.scss';
 
 const Hello = () => {
   const history = useHistory();
@@ -13,11 +13,11 @@ const Hello = () => {
   }
 
   return (
-    <div className={styles.hello_react}>
+    <div>
       <h1 className={styles.title}>email: {query.get('email')}</h1>
-      <div className={styles.footer}>
-        <Button onClick={handleClickBack}>Go back</Button>
-      </div>
+      <Button className={styles.button} onClick={handleClickBack}>
+        Go back
+      </Button>
     </div>
   );
 };

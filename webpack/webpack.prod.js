@@ -12,7 +12,7 @@ module.exports = merge(common, {
   devtool: 'source-map',
 
   output: {
-    filename: 'static/js/[name].[hash:8].bundle.js',
+    filename: 'public/js/[name].[hash:8].bundle.js',
     path: path.resolve(__dirname, '../dist'),
     publicPath: '/'
   },
@@ -21,13 +21,13 @@ module.exports = merge(common, {
     new CleanWebpackPlugin(),
     new CopyPlugin([
       {
-        from: 'static',
+        from: 'public',
         to: ''
       }
     ]),
     new MiniCssExtractPlugin({
-      filename: 'static/css/[name].[hash:8].css',
-      chunkFilename: 'static/css/[id].[hash:8].css',
+      filename: 'public/css/[name].[hash:8].css',
+      chunkFilename: 'public/css/[id].[hash:8].css',
       ignoreOrder: false
     })
   ],
@@ -101,7 +101,6 @@ module.exports = merge(common, {
       },
       {
         test: /\.less$/,
-        include: /src/,
         use: [
           MiniCssExtractPlugin.loader,
           'css-loader',

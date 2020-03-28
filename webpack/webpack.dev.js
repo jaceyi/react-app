@@ -9,7 +9,7 @@ module.exports = merge(common, {
   devServer: {
     inline: true,
     historyApiFallback: true,
-    contentBase: './static',
+    contentBase: './public',
     overlay: {
       warnings: true,
       errors: true
@@ -36,7 +36,6 @@ module.exports = merge(common, {
       },
       {
         test: /\.less$/,
-        include: /src/,
         use: [
           'style-loader',
           'css-loader',
@@ -50,6 +49,7 @@ module.exports = merge(common, {
         ]
       },
       {
+        // 项目中写的 css 都是 less/scss 的，所以 css 文件只存在 node_modules 中
         test: /\.(css)$/,
         include: /node_modules/,
         use: ['style-loader', 'css-loader', 'postcss-loader']

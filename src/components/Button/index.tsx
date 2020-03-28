@@ -10,13 +10,17 @@ interface Props {
   onClick?: React.EventHandler<any>;
 }
 
-const Button: React.FC<Props> = (props: Props) => {
-  const { children, disabled, style, className, type, onClick } = props;
-
+const Button: React.FC<Props> = ({
+  children,
+  disabled,
+  style,
+  className,
+  type = 'default',
+  onClick
+}: Props) => {
   return (
     <button
-      className={`${styles.rc_button} rc-button-${type ||
-        'default'} ${className || ''}`}
+      className={`${styles.rc_button} rc-button-${type} ${className || ''}`}
       style={style}
       disabled={disabled}
       onClick={onClick}

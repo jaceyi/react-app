@@ -35,4 +35,4 @@ yarn prettier
 ```
 
 ## 备注
-> static 为静态资源目录，目录内的资源都会按照原路径 Copy 至 dist 目录。
+> public 目录内的资源都会按照原路径 Copy 至 dist 目录。

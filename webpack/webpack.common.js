@@ -13,7 +13,7 @@ module.exports = {
 
   plugins: [
     new HtmlWebpackPlugin({
-      template: './static/index.html'
+      template: './public/index.html'
     })
   ],
 
@@ -51,7 +51,7 @@ module.exports = {
         loader: 'url-loader',
         options: {
           limit: 1000,
-          name: 'static/images/[name].[hash:8].[ext]'
+          name: 'public/images/[name].[hash:8].[ext]'
         }
       },
       {
