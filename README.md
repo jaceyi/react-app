@@ -1,6 +1,6 @@
 # react-app
 
-React 初始化项目，配置简易 Webpack，支持 TypeScript、Less、Sass 等。
+Typescript+React 初始化项目，配置简易 Webpack。
 
 ## 前言
 > 项目默认配置有 eslint 如果不需要自行移除，src 目录中有 demo 可供初学，有问题欢迎探讨。
@@ -23,7 +23,7 @@ yarn build
 ```
 
 ## 检查代码格式
-配置文件 `.eslintrc` 参考官网 https://eslint.bootcss.com/
+配置文件 `.eslintrc` 参考官网 https://eslint.org/
 ```bash
 yarn lint
 ```
