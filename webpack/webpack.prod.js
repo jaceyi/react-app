@@ -1,7 +1,7 @@
+const path = require('path');
 const merge = require('webpack-merge');
 const TerserJSPlugin = require('terser-webpack-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
 const common = require('./webpack.common.js');
@@ -12,23 +12,19 @@ module.exports = merge(common, {
   devtool: 'source-map',
 
   output: {
-    filename: 'public/js/[name].[hash:8].bundle.js',
+    filename: 'static/scripts/[name].[hash:8].bundle.js',
     path: path.resolve(__dirname, '../dist'),
     publicPath: '/'
   },
 
   plugins: [
     new CleanWebpackPlugin(),
-    new CopyPlugin([
-      {
-        from: 'public',
-        to: ''
-      }
-    ]),
-    new MiniCssExtractPlugin({
-      filename: 'public/css/[name].[hash:8].css',
-      chunkFilename: 'public/css/[id].[hash:8].css',
-      ignoreOrder: false
+    new CopyPlugin({
+      patterns: [
+        {
+          from: 'public'
+        }
+      ]
     })
   ],
 
@@ -80,44 +76,5 @@ module.exports = merge(common, {
         }
       }
     }
-  },
-
-  module: {
-    rules: [
-      {
-        test: /\.scss$/,
-        include: /src/,
-        use: [
-          MiniCssExtractPlugin.loader,
-          {
-            loader: 'css-loader',
-            options: {
-              modules: true
-            }
-          },
-          'postcss-loader',
-          'sass-loader'
-        ]
-      },
-      {
-        test: /\.less$/,
-        use: [
-          MiniCssExtractPlugin.loader,
-          'css-loader',
-          'postcss-loader',
-          {
-            loader: 'less-loader',
-            options: {
-              javascriptEnabled: true
-            }
-          }
-        ]
-      },
-      {
-        test: /\.(css)$/,
-        include: /node_modules/,
-        use: [MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader']
-      }
-    ]
   }
 });

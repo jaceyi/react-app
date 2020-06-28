@@ -4,7 +4,7 @@ import routers from '@/router';
 
 const App = () => (
   <Switch>
-    {routers.map(page => (
+    {routers.map((page) => (
       <Route
         exact
         key={page.path}

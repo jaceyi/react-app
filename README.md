@@ -3,11 +3,11 @@
 Typescript+React 初始化项目，配置简易 Webpack。
 
 ## 前言
-> 项目默认配置有 eslint 如果不需要自行移除，src 目录中有 demo 可供初学，有问题欢迎探讨。
+> 项目默认配置有 eslint 如果不需要自行移除，src 目录中有建议 demo 可供初学，有问题欢迎探讨。
 
 ## 安装依赖
 ```bash
-yarn install
+yarn
 ```
 
 ## 启动本地开发服务

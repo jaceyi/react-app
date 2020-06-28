@@ -1,8 +1,9 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
-  entry: ['babel-polyfill', path.resolve(__dirname, '../src/')],
+  entry: ['core-js/stable', 'regenerator-runtime/runtime', path.resolve(__dirname, '../src/')],
 
   resolve: {
     extensions: ['.js', '.jsx', '.ts', '.tsx'],
@@ -13,7 +14,12 @@ module.exports = {
 
   plugins: [
     new HtmlWebpackPlugin({
-      template: './public/index.html'
+      template: path.resolve(__dirname, '../public/index.html')
+    }),
+    new MiniCssExtractPlugin({
+      filename: 'static/styles/[name].[hash:8].css',
+      chunkFilename: 'static/styles/[id].[hash:8].css',
+      ignoreOrder: false
     })
   ],
 
@@ -51,7 +57,7 @@ module.exports = {
         loader: 'url-loader',
         options: {
           limit: 1000,
-          name: 'public/images/[name].[hash:8].[ext]'
+          name: 'static/images/[name].[hash:8].[ext]'
         }
       },
       {
@@ -60,7 +66,62 @@ module.exports = {
         options: {
           name: 'static/fonts/[name].[hash:8].[ext]'
         }
-      }
+      },
+        {
+          test: /\.scss$/,
+          include: /src/,
+          use: [
+            {
+              loader: MiniCssExtractPlugin.loader,
+              options: {
+                hmr: process.env.NODE_ENV === 'development'
+              }
+            },
+            {
+              loader: 'css-loader',
+              options: {
+                modules: true
+              }
+            },
+            'postcss-loader',
+            'sass-loader'
+          ]
+        },
+        {
+          test: /\.less$/,
+          use: [
+            {
+              loader: MiniCssExtractPlugin.loader,
+              options: {
+                hmr: process.env.NODE_ENV === 'development'
+              }
+            },
+            'css-loader',
+            'postcss-loader',
+            {
+              loader: 'less-loader',
+              options: {
+                lessOptions: {
+                  javascriptEnabled: true
+                }
+              }
+            }
+          ]
+        },
+        {
+          test: /\.(css)$/,
+          include: /node_modules/,
+          use: [
+            {
+              loader: MiniCssExtractPlugin.loader,
+              options: {
+                hmr: process.env.NODE_ENV === 'development'
+              }
+            },
+            'css-loader',
+            'postcss-loader'
+          ]
+        }
     ]
   }
 };

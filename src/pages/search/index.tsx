@@ -1,16 +1,17 @@
 import * as React from 'react';
+import { useCallback } from 'react';
 import { useHistory } from 'react-router';
 import Button from '@/components/Button';
 import * as styles from './styles/index.scss';
 
-const Hello = () => {
+const Search = () => {
   const history = useHistory();
 
   const query = new URLSearchParams(history.location.search);
 
-  function handleClickBack() {
+  const handleClickBack = useCallback(() => {
     history.goBack();
-  }
+  }, [history]);
 
   return (
     <div>
@@ -22,4 +23,4 @@ const Hello = () => {
   );
 };
 
-export default Hello;
+export default Search;
