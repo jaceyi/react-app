@@ -67,61 +67,61 @@ module.exports = {
           name: 'static/fonts/[name].[hash:8].[ext]'
         }
       },
-        {
-          test: /\.scss$/,
-          include: /src/,
-          use: [
-            {
-              loader: MiniCssExtractPlugin.loader,
-              options: {
-                hmr: process.env.NODE_ENV === 'development'
-              }
-            },
-            {
-              loader: 'css-loader',
-              options: {
-                modules: true
-              }
-            },
-            'postcss-loader',
-            'sass-loader'
-          ]
-        },
-        {
-          test: /\.less$/,
-          use: [
-            {
-              loader: MiniCssExtractPlugin.loader,
-              options: {
-                hmr: process.env.NODE_ENV === 'development'
-              }
-            },
-            'css-loader',
-            'postcss-loader',
-            {
-              loader: 'less-loader',
-              options: {
-                lessOptions: {
-                  javascriptEnabled: true
-                }
+      {
+        test: /\.scss$/,
+        include: /src/,
+        use: [
+          {
+            loader: MiniCssExtractPlugin.loader,
+            options: {
+              hmr: process.env.NODE_ENV === 'development'
+            }
+          },
+          {
+            loader: 'css-loader',
+            options: {
+              modules: true
+            }
+          },
+          'postcss-loader',
+          'sass-loader'
+        ]
+      },
+      {
+        test: /\.less$/,
+        use: [
+          {
+            loader: MiniCssExtractPlugin.loader,
+            options: {
+              hmr: process.env.NODE_ENV === 'development'
+            }
+          },
+          'css-loader',
+          'postcss-loader',
+          {
+            loader: 'less-loader',
+            options: {
+              lessOptions: {
+                javascriptEnabled: true
               }
             }
-          ]
-        },
-        {
-          test: /\.(css)$/,
-          include: /node_modules/,
-          use: [
-            {
-              loader: MiniCssExtractPlugin.loader,
-              options: {
-                hmr: process.env.NODE_ENV === 'development'
-              }
-            },
-            'css-loader',
-            'postcss-loader'
-          ]
-        }
+          }
+        ]
+      },
+      {
+        test: /\.(css)$/,
+        include: /node_modules/,
+        use: [
+          {
+            loader: MiniCssExtractPlugin.loader,
+            options: {
+              hmr: process.env.NODE_ENV === 'development'
+            }
+          },
+          'css-loader',
+          'postcss-loader'
+        ]
+      }
     ]
   }
 };
