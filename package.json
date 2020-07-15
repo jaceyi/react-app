@@ -5,7 +5,7 @@
     "start": "webpack-dev-server --open --progress --config ./webpack/webpack.dev.js",
     "build": "webpack --progress --config ./webpack/webpack.prod.js",
     "prettier": "prettier --write 'src/**/*.{js,jsx,ts,tsx,scss,less,css}'",
-    "lint": "tsc --noEmit && eslint 'src/**/*.{js,ts,tsx}' --quiet --fix"
+    "lint": "tsc --noEmit && eslint 'src/**/*.{js,jsx,ts,tsx}' --quiet --fix"
   },
   "dependencies": {
     "@types/react": "^16.9.17",
