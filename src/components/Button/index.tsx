@@ -1,5 +1,5 @@
 import * as React from 'react';
-import * as styles from './Button.scss';
+import * as styles from './style.scss';
 
 type Props = React.HTMLAttributes<HTMLButtonElement> & {
   type?: 'default' | 'primary';

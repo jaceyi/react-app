@@ -4,8 +4,7 @@ import { useHistory } from 'react-router';
 import reactImage from '@/assets/images/react.png';
 import Button from '@/components/Button';
 import { REG_EXP_EMAIL } from '@/utils/consts';
-import * as styles from './styles/index.scss';
-import { useMemo } from 'react';
+import * as styles from './style.scss';
 
 const { useState } = React;
 
@@ -13,12 +12,8 @@ const Home = () => {
   const history = useHistory();
   const [value, setValue] = useState('');
 
-  const { status, url } = useMemo(() => {
-    return {
-      status: REG_EXP_EMAIL.test(value),
-      url: `/search?email=${encodeURIComponent(value)}`
-    };
-  }, [value]);
+  const status = REG_EXP_EMAIL.test(value);
+  const url = `/search?email=${encodeURIComponent(value)}`;
 
   return (
     <div>
@@ -36,7 +31,7 @@ const Home = () => {
         }}
       />
       {status && (
-        <div className={styles.footer}>
+        <div className={styles.handle}>
           <Link to={url}>
             <Button type="primary">Login</Button>
           </Link>
