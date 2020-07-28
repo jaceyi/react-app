@@ -4,7 +4,7 @@ import { useHistory } from 'react-router';
 import Button from '@/components/Button';
 import * as styles from './style.scss';
 
-const Search = () => {
+const User = () => {
   const history = useHistory();
 
   const query = new URLSearchParams(history.location.search);
@@ -23,4 +23,4 @@ const Search = () => {
   );
 };
 
-export default Search;
+export default User;

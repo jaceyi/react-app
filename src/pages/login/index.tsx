@@ -8,7 +8,7 @@ import * as styles from './style.scss';
 
 const { useState } = React;
 
-const Home = () => {
+const Login = () => {
   const history = useHistory();
   const [value, setValue] = useState('');
 
@@ -41,4 +41,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default Login;

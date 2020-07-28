@@ -1,13 +1,13 @@
-import Home from '@/pages';
-import Search from '@/pages/search';
+import Login from '@/pages';
+import User from '@/pages/user';
 
 export default [
   {
     path: '/',
-    component: Home
+    component: Login
   },
   {
     path: '/search',
-    component: Search
+    component: User
   }
 ];
