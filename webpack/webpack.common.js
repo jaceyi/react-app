@@ -9,6 +9,12 @@ module.exports = {
     path.resolve(__dirname, '../src/')
   ],
 
+  output: {
+    filename: 'static/scripts/[name].[hash:8].bundle.js',
+    path: path.resolve(__dirname, '../dist'),
+    publicPath: '/'
+  },
+
   resolve: {
     extensions: ['.js', '.jsx', '.ts', '.tsx'],
     alias: {

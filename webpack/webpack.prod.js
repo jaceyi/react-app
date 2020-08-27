@@ -1,4 +1,3 @@
-const path = require('path');
 const merge = require('webpack-merge');
 const TerserJSPlugin = require('terser-webpack-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
@@ -11,12 +10,6 @@ module.exports = merge(common, {
   mode: 'production',
 
   devtool: 'source-map',
-
-  output: {
-    filename: 'static/scripts/[name].[hash:8].bundle.js',
-    path: path.resolve(__dirname, '../dist'),
-    publicPath: '/'
-  },
 
   plugins: [
     new CleanWebpackPlugin(),
@@ -40,12 +33,7 @@ module.exports = merge(common, {
         test: /\.scss$/,
         include: /src/,
         use: [
-          {
-            loader: MiniCssExtractPlugin.loader,
-            options: {
-              hmr: process.env.NODE_ENV === 'development'
-            }
-          },
+          MiniCssExtractPlugin.loader,
           {
             loader: 'css-loader',
             options: {
@@ -59,12 +47,7 @@ module.exports = merge(common, {
       {
         test: /\.less$/,
         use: [
-          {
-            loader: MiniCssExtractPlugin.loader,
-            options: {
-              hmr: process.env.NODE_ENV === 'development'
-            }
-          },
+          MiniCssExtractPlugin.loader,
           'css-loader',
           'postcss-loader',
           {
@@ -80,16 +63,7 @@ module.exports = merge(common, {
       {
         test: /\.(css)$/,
         include: /node_modules/,
-        use: [
-          {
-            loader: MiniCssExtractPlugin.loader,
-            options: {
-              hmr: process.env.NODE_ENV === 'development'
-            }
-          },
-          'css-loader',
-          'postcss-loader'
-        ]
+        use: [MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader']
       }
     ]
   },
