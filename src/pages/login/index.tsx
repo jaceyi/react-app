@@ -17,8 +17,8 @@ const Login = () => {
 
   return (
     <div>
-      <div className={styles.image_box}>
-        <img className={styles.react_image} src={reactImage} alt="React图片" />
+      <div className={styles.logo}>
+        <img className={styles.logo} src={reactImage} alt="React图片" />
       </div>
       <input
         value={value}
@@ -26,8 +26,8 @@ const Login = () => {
         type="text"
         placeholder="Input email"
         onChange={({ target }) => setValue(target.value)}
-        onKeyDown={(e) => {
-          status && e.keyCode === 13 && history.push(url);
+        onKeyDown={e => {
+          status && e.key === 'Enter' && history.push(url);
         }}
       />
       {status && (

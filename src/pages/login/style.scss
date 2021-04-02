@@ -8,15 +8,15 @@
   }
 }
 
-.image_box {
+.logo {
   width: 200px;
   text-align: center;
-  margin: 15vh auto 0;
-}
+  margin: 12vh auto 0;
 
-.react_image {
-  width: 100%;
-  animation: rotate 10s linear infinite;
+  img {
+    width: 100%;
+    animation: rotate 13s linear infinite;
+  }
 }
 
 .input {
