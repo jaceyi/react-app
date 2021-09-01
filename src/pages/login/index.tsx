@@ -4,12 +4,13 @@ import { useHistory } from 'react-router';
 import reactImage from '@/assets/images/react.png';
 import Button from '@/components/Button';
 import { REG_EXP_EMAIL } from '@/utils/consts';
-import * as styles from './style.scss';
+import * as styles from './style.module.scss';
 
 const { useState } = React;
 
 const Login = () => {
   const history = useHistory();
+
   const [value, setValue] = useState('');
 
   const status = REG_EXP_EMAIL.test(value);

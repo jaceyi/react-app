@@ -1,13 +1,9 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
-  entry: [
-    'core-js/stable',
-    'regenerator-runtime/runtime',
-    'react-hot-loader/patch',
-    path.resolve(__dirname, '../src/')
-  ],
+  entry: path.resolve(__dirname, '../src/'),
 
   output: {
     filename: 'static/scripts/[name].[contenthash].bundle.js',
@@ -18,13 +14,16 @@ module.exports = {
   resolve: {
     extensions: ['.js', '.jsx', '.ts', '.tsx'],
     alias: {
-      'react-dom': '@hot-loader/react-dom',
-      '@': path.resolve(__dirname, '../src/'),
-      chatUtils: path.resolve(__dirname, '../src/components/Chat/utils/')
+      '@': path.resolve(__dirname, '../src/')
     }
   },
 
   plugins: [
+    new MiniCssExtractPlugin({
+      filename: 'static/styles/[name].[contenthash].css',
+      chunkFilename: 'static/styles/[id].[contenthash].css',
+      ignoreOrder: false
+    }),
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, '../public/index.html')
     })
@@ -41,6 +40,34 @@ module.exports = {
         test: /\.jsx?/,
         exclude: /node_modules/,
         loader: 'babel-loader'
+      },
+      {
+        test: /\.scss$/,
+        include: /src/,
+        use: [
+          {
+            loader: MiniCssExtractPlugin.loader,
+            options: {
+              esModule: false
+            }
+          },
+          {
+            loader: 'css-loader',
+            options: {
+              modules: {
+                localIdentName: '[path][name]__[local]--[hash:base64:5]',
+                auto: true
+              }
+            }
+          },
+          'postcss-loader',
+          'sass-loader'
+        ]
+      },
+      {
+        test: /\.(css)$/,
+        include: /node_modules/,
+        use: [MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader']
       },
       {
         type: 'javascript/auto',

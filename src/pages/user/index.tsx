@@ -2,7 +2,7 @@ import * as React from 'react';
 import { useCallback } from 'react';
 import { useHistory } from 'react-router';
 import Button from '@/components/Button';
-import * as styles from './style.scss';
+import * as styles from './style.module.scss';
 
 const User = () => {
   const history = useHistory();

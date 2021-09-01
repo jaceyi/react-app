@@ -1,9 +1,9 @@
 import * as React from 'react';
-import * as styles from './style.scss';
+import * as styles from './style.module.scss';
 
-type Props = React.HTMLAttributes<HTMLButtonElement> & {
+interface Props extends React.HTMLAttributes<HTMLButtonElement> {
   type?: 'default' | 'primary';
-};
+}
 
 const Button = ({ className, type = 'default', ...props }: Props) => {
   return (

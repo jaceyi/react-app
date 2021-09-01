@@ -1,3 +1,4 @@
+const path = require('path');
 const { merge } = require('webpack-merge');
 const common = require('./webpack.common.js');
 const ESLintPlugin = require('eslint-webpack-plugin');
@@ -14,55 +15,13 @@ module.exports = merge(common, {
     })
   ],
 
-  module: {
-    rules: [
-      {
-        test: /\.scss$/,
-        include: /src/,
-        use: [
-          'style-loader',
-          {
-            loader: 'css-loader',
-            options: {
-              modules: true
-            }
-          },
-          'postcss-loader',
-          'sass-loader'
-        ]
-      },
-      {
-        test: /\.less$/,
-        use: [
-          'style-loader',
-          'css-loader',
-          'postcss-loader',
-          {
-            loader: 'less-loader',
-            options: {
-              lessOptions: {
-                javascriptEnabled: true
-              }
-            }
-          }
-        ]
-      },
-      {
-        test: /\.(css)$/,
-        use: ['style-loader', 'css-loader', 'postcss-loader']
-      }
-    ]
-  },
-
   devServer: {
-    inline: true,
     historyApiFallback: true,
-    contentBase: './public',
-    hot: true,
-    overlay: {
-      warnings: true,
-      errors: true
+    static: {
+      directory: path.resolve(__dirname, '../public')
     },
-    port: 2020
+    hot: 'only',
+    allowedHosts: 'all',
+    port: 8080
   }
 });
