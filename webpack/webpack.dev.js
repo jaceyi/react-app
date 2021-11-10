@@ -1,4 +1,5 @@
 const path = require('path');
+const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin');
 const { merge } = require('webpack-merge');
 const common = require('./webpack.common.js');
 const ESLintPlugin = require('eslint-webpack-plugin');
@@ -12,7 +13,8 @@ module.exports = merge(common, {
     new ESLintPlugin({
       extensions: ['js', 'jsx', 'ts', 'tsx'],
       context: 'src'
-    })
+    }),
+    new ReactRefreshWebpackPlugin()
   ],
 
   devServer: {
@@ -20,7 +22,7 @@ module.exports = merge(common, {
     static: {
       directory: path.resolve(__dirname, '../public')
     },
-    hot: 'only',
+    hot: true,
     allowedHosts: 'all',
     port: 8080
   }

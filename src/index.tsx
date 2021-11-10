@@ -1,4 +1,4 @@
-import '@/base.scss';
+import './base.scss';
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';

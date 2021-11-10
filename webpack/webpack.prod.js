@@ -16,13 +16,7 @@ module.exports = merge(common, {
       patterns: [
         {
           from: '**/*',
-          context: path.resolve(__dirname, '../public'),
-          filter: resourcePath => {
-            // 手动过滤 index.html
-            return (
-              resourcePath !== path.resolve(__dirname, '../public/index.html')
-            );
-          }
+          context: path.resolve(__dirname, '../public')
         }
       ]
     })

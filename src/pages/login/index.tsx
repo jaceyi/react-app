@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Link } from 'react-router-dom';
-import { useHistory } from 'react-router';
+import { useNavigate } from 'react-router';
 import reactImage from '@/assets/images/react.png';
 import Button from '@/components/Button';
 import { REG_EXP_EMAIL } from '@/utils/consts';
@@ -9,7 +9,7 @@ import * as styles from './style.module.scss';
 const { useState } = React;
 
 const Login = () => {
-  const history = useHistory();
+  const navigate = useNavigate();
 
   const [value, setValue] = useState('');
 
@@ -28,7 +28,7 @@ const Login = () => {
         placeholder="Input email"
         onChange={({ target }) => setValue(target.value)}
         onKeyDown={e => {
-          status && e.key === 'Enter' && history.push(url);
+          status && e.key === 'Enter' && navigate(url);
         }}
       />
       {status && (

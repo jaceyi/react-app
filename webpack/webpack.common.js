@@ -2,6 +2,8 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
+const prodMode = process.env.NODE_ENV === 'production';
+
 module.exports = {
   entry: path.resolve(__dirname, '../src/'),
 
@@ -20,12 +22,11 @@ module.exports = {
 
   plugins: [
     new MiniCssExtractPlugin({
-      filename: 'static/styles/[name].[contenthash].css',
-      chunkFilename: 'static/styles/[id].[contenthash].css',
-      ignoreOrder: false
+      filename: `static/styles/[name]${prodMode ? '.[contenthash]' : ''}.css`,
+      chunkFilename: `static/styles/[id]${prodMode ? '.[contenthash]' : ''}.css`
     }),
     new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, '../public/index.html')
+      template: path.resolve(__dirname, '../src/index.html')
     })
   ],
 
@@ -55,7 +56,7 @@ module.exports = {
             loader: 'css-loader',
             options: {
               modules: {
-                localIdentName: '[path][name]__[local]--[hash:base64:5]',
+                localIdentName: '[path]_[local]__[hash:base64:5]',
                 auto: true
               }
             }

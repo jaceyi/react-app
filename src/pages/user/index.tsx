@@ -1,16 +1,16 @@
 import * as React from 'react';
 import { useCallback } from 'react';
-import { useHistory } from 'react-router';
 import Button from '@/components/Button';
 import * as styles from './style.module.scss';
+import { useLocation, useNavigate } from 'react-router';
 
 const User = () => {
-  const history = useHistory();
+  const location = useLocation();
+  const query = new URLSearchParams(location.search);
 
-  const query = new URLSearchParams(history.location.search);
-
+  const navigate = useNavigate();
   const handleClickBack = useCallback(() => {
-    history.goBack();
+    navigate(-1);
   }, [history]);
 
   return (

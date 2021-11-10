@@ -4,10 +4,10 @@ import User from '@/pages/user';
 export default [
   {
     path: '/',
-    component: Login
+    Component: Login
   },
   {
     path: '/search',
-    component: User
+    Component: User
   }
 ];
