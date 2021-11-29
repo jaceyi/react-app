@@ -1,10 +1,11 @@
 import * as React from 'react';
 import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router';
-import reactImage from '@/assets/images/react.png';
 import Button from '@/components/Button';
 import { REG_EXP_EMAIL } from '@/utils/consts';
 import * as styles from './style.module.scss';
+
+const reactImage = require('@/assets/images/react.png');
 
 const { useState } = React;
 
