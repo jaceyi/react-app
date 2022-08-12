@@ -6,15 +6,15 @@ const CopyPlugin = require('copy-webpack-plugin');
 
 module.exports = (env, { production = false } = {}) => {
   const modePath = production ? '.[contenthash]' : '';
-  const assetPath = `static/assets/[name]${modePath}[ext]`;
 
   return {
     entry: path.resolve(__dirname, '../src/'),
 
     output: {
-      filename: 'static/scripts/[name].[contenthash].bundle.js',
+      filename: 'assets/scripts/[name].[contenthash].bundle.js',
       path: path.resolve(__dirname, '../dist'),
-      publicPath: '/'
+      publicPath: '/',
+      assetModuleFilename: `assets/[name]${modePath}[ext]`
     },
 
     resolve: {
@@ -34,8 +34,8 @@ module.exports = (env, { production = false } = {}) => {
         template: path.resolve(__dirname, '../src/index.html')
       }),
       new MiniCssExtractPlugin({
-        filename: `static/styles/[name]${modePath}.css`,
-        chunkFilename: `static/styles/[id]${modePath}.css`
+        filename: `assets/styles/[name]${modePath}.css`,
+        chunkFilename: `assets/styles/[id]${modePath}.css`
       }),
       new CopyPlugin({
         patterns: [
@@ -114,17 +114,11 @@ module.exports = (env, { production = false } = {}) => {
         },
         {
           test: /\.(png|svg|jpg|jpeg|gif)$/,
-          type: 'asset/resource',
-          generator: {
-            filename: assetPath
-          }
+          type: 'asset/resource'
         },
         {
           test: /\.(eot|ttf|woff)$/,
-          type: 'asset/resource',
-          generator: {
-            filename: assetPath
-          }
+          type: 'asset/resource'
         }
       ]
     },

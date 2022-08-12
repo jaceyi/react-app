@@ -1,13 +1,12 @@
 {
   "compilerOptions": {
-    "lib": ["es2018", "dom"],
+    "target": "ES5",
+    "module": "ES6",
     "jsx": "react",
     "baseUrl": "./",
     "paths": {
-      "@/*":["src/*"]
+      "@/*": ["src/*"]
     }
   },
-  "include": [
-    "src"
-  ]
+  "include": ["src"]
 }

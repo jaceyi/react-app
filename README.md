@@ -1,6 +1,6 @@
 # react-app
 
-Typescript+React 初始化项目，配置简易 Webpack。
+Typescript+React 初始化项目，配备有简易 Vite 与 Webpack，可自行选择移出。
 
 ## 前言
 
@@ -23,7 +23,9 @@ yarn
 ## 启动本地开发服务
 
 ```bash
-yarn start
+yarn dev
+# or
+yarn dev-v
 ```
 
 ## 打包编译
@@ -32,6 +34,8 @@ yarn start
 
 ```bash
 yarn build
+# or
+yarn build-v
 ```
 
 ## 检查代码格式
