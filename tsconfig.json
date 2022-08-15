@@ -2,6 +2,7 @@
   "compilerOptions": {
     "target": "ES5",
     "module": "ES6",
+    "moduleResolution": "Node",
     "jsx": "react",
     "baseUrl": "./",
     "paths": {
