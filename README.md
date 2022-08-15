@@ -1,10 +1,8 @@
-# react-app
+## Start
 
-Typescript+React 初始化项目，配备有简易 Vite 与 Webpack，可自行选择移出。
+> Typescript + React 初始化项目，配备有简易 Vite 与 Webpack，可自行选择移出。`package.json` 中 `scripts` 配置有不同的启动命令，使用方式见下方。
 
-## 前言
-
-> 项目默认配置有 eslint 如果不需要自行移除，src 目录中有建议 demo 可供初学，有问题欢迎探讨。
+项目默认配置有 eslint 如果不需要自行移除，src 目录中有建议 demo 可供初学，有问题欢迎探讨。
 
 ## 安装依赖
 
@@ -23,9 +21,9 @@ yarn
 ## 启动本地开发服务
 
 ```bash
-yarn dev
+yarn dev # Webpack
 # or
-yarn dev-v
+yarn dev-v # Vite
 ```
 
 ## 打包编译
@@ -33,9 +31,9 @@ yarn dev-v
 默认输出 dist 文件夹
 
 ```bash
-yarn build
+yarn build # Webpack
 # or
-yarn build-v
+yarn build-v # Vite
 ```
 
 ## 检查代码格式
