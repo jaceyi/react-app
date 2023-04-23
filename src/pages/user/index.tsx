@@ -1,23 +1,43 @@
-import * as React from 'react';
-import { useCallback } from 'react';
-import Button from '@/components/Button';
-import * as styles from './style.module.scss';
-import { useLocation, useNavigate } from 'react-router';
+import React from 'react';
+import { Input, Button } from 'antd';
+import { useValues } from '@/hooks';
+import styles from './style.module.scss';
+import { useNavigate } from 'react-router';
 
 const User = () => {
-  const location = useLocation();
-  const query = new URLSearchParams(location.search);
+  const navigatev = useNavigate();
 
-  const navigate = useNavigate();
-  const handleClickBack = useCallback(() => {
-    navigate(-1);
-  }, [history]);
+  const [{ username, password }, setValue] = useValues({
+    username: '',
+    password: ''
+  });
 
   return (
-    <div>
-      <h1 className={styles.title}>email: {query.get('email')}</h1>
-      <Button className={styles.button} onClick={handleClickBack}>
-        Go back
+    <div className={styles.container}>
+      <Input
+        className={styles.input}
+        value={username}
+        onChange={e =>
+          setValue({
+            username: e.target.value
+          })
+        }
+      />
+      <Input
+        type="password"
+        className={styles.input}
+        value={password}
+        onChange={e =>
+          setValue({
+            password: e.target.value
+          })
+        }
+      />
+      <Button
+        onClick={() => navigatev(`/user/${encodeURIComponent(username)}`)}
+        type="primary"
+      >
+        Submit
       </Button>
     </div>
   );

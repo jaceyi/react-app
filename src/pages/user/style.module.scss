@@ -1,18 +1,8 @@
-.title {
-  font-size: 46px;
-  font-weight: 100;
-  text-align: center;
-  margin-top: 22vh;
-  color: #555;
-}
+.container {
+  padding: 10vh 25vw;
+  background-color: #fff;
 
-.button {
-  display: block;
-  margin: 15vh auto 0;
-}
-
-@media screen and (max-width: 762px) {
-  .title {
-    font-size: 28px;
+  .input {
+    margin-bottom: 16px;
   }
 }

@@ -1,13 +1,19 @@
 {
   "compilerOptions": {
+    "allowSyntheticDefaultImports": true,
     "target": "ES5",
-    "module": "ES6",
-    "moduleResolution": "Node",
+    "module": "esnext",
+    "lib": ["DOM", "ESNext"],
     "jsx": "react",
-    "baseUrl": "./",
+    "locale": "zh-CN",
+    "isolatedModules": true,
+    "strict": true,
+    "moduleResolution": "Node",
+    "forceConsistentCasingInFileNames": true,
     "paths": {
       "@/*": ["src/*"]
     }
   },
-  "include": ["src"]
+  "include": ["src"],
+  "exclude": ["node_modules"]
 }
