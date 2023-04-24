@@ -36,7 +36,7 @@ const Doc = () => {
         的使用。
       </p>
       <p>
-        <code>src/router.js</code> 是路由配置文件，特殊注意的两个参数：
+        <code>src/router.ts</code> 是路由配置文件，特殊注意的两个参数：
       </p>
       <ul>
         <li>
