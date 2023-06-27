@@ -52,7 +52,7 @@ module.exports = (env, { production = false } = {}) => {
         {
           test: /\.tsx?$/,
           exclude: /node_modules/,
-          loader: 'ts-loader'
+          use: ['babel-loader', 'ts-loader']
         },
         {
           test: /\.jsx?/,

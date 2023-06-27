@@ -10,7 +10,7 @@ yarn
 
 ## 开发必读
 
-开发依赖环境 Node 16+，默认端口 8080。
+开发依赖环境 Node 16.14+，默认端口 8080。
 
 最好给编辑器安装上 EditorConfig, ESLint, Prettier 方便开发。
 
