@@ -46,7 +46,7 @@
     "json-loader": "^0.5.7",
     "lint-staged": "^13.2.1",
     "mini-css-extract-plugin": "^2.7.5",
-    "postcss": "^8.4.23",
+    "postcss": "^8.4.31",
     "postcss-loader": "^7.2.4",
     "prettier": "^2.8.8",
     "prop-types": "^15.8.1",
